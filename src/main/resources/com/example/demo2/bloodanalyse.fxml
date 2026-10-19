@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.BloodCellAnalyserController">
+
+    <children>
+        <VBox layoutX="10" layoutY="10" spacing="10">
+            <HBox spacing="10">
+                <Button onAction="#loadImage" text="Load Image" />
+                <Button onAction="#convertToTricolours" text="Convert to Tricolour" />
+                <Button onAction="#analyseImage" text="Analyse" />
+            </HBox>
+
+            <HBox spacing="20">
+                <StackPane>
+                    <ImageView fx:id="originalImageView" preserveRatio="true" />
+                    <Canvas fx:id="overlayCanvas" mouseTransparent="true" />
+                </StackPane>
+
+                <ImageView fx:id="tricolourImageView" preserveRatio="true" />
+            </HBox>
+        </VBox>
+          <Label layoutX="838.0" layoutY="19.0" text="Legend:" />
+      <Label layoutX="838.0" layoutY="37.0" text="Purple = White Blood Cells" textFill="#7b29a1" />
+          <CheckBox fx:id="numberingCheckBox" layoutX="299.0" layoutY="11.0" text="Show Numbers" />
+          <Label fx:id="cellCountLabel" layoutX="742.0" layoutY="20.0" text="Cell Count: 0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="838.0" layoutY="55.0" text="Blue = Red Blood Cell Clusters" textFill="#2713d9" />
+      <Label layoutX="838.0" layoutY="73.0" text="Green = Red Blood Cells" textFill="#0bb421" />
+        <Label fx:id="redCountLabel" layoutX="719.0" layoutY="55.0" text="Red Blood Cells: 0" />
+        <Label fx:id="whiteCountLabel" layoutX="708.0" layoutY="37.0" text="White Blood Cells: 0" />
+
+    </children>
+</AnchorPane>
